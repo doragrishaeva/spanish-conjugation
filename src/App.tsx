@@ -1,24 +1,21 @@
-import React from 'react';
+import { observer } from 'mobx-react-lite';
+import { useEffect } from 'react';
 
-// const MainPage = lazy(() =>
-// 	import('./pages/Main/Main.page').then((module) => ({
-// 		default: module.MainPage
-// 	}))
-// );
+import { Card } from '@/components';
+import { appStore } from '@/stores';
+import './App.scss';
 
-// export const App: React.FC = () => {
-// 	return (
-// 		<div className='bg-bg w-screen h-screen relative'>
-// 			<Suspense fallback={<Loader />}>
-// 				<Routes>
-// 					<Route path='/' element={<MainPage />} />
-// 					<Route path='settings' element={<SettingsPage />} />
-// 				</Routes>
-// 			</Suspense>
-// 		</div>
-// 	);
-// };
+export const App: React.FC = observer(() => {
+	const { verb, fetchVerb } = appStore;
 
-export const App: React.FC = () => {
-	return <div>App</div>;
-};
+	useEffect(() => {
+		fetchVerb();
+	}, []);
+
+	return (
+		<>
+			<div className='background'></div>
+			<Card verb={verb} fetchNewVerb={fetchVerb}></Card>
+		</>
+	);
+});
