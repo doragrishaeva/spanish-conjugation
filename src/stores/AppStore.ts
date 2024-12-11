@@ -1,6 +1,7 @@
 import { makeAutoObservable } from 'mobx';
 
 import { IVerb } from '@/models';
+import API_URL from '../config';
 
 class AppStore {
 	verb: IVerb | null = null;
@@ -15,9 +16,7 @@ class AppStore {
 
 	fetchVerb = async () => {
 		try {
-			const response = await fetch(
-				'http://localhost:5000/api/getConjugation'
-			);
+			const response = await fetch(`${API_URL}/api/getConjugation`);
 			const data = await response.json();
 			this.setVerb(data);
 		} catch (error) {
