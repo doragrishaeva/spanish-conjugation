@@ -6,7 +6,7 @@ import { App } from './App';
 import './index.scss';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-	<BrowserRouter basename='/react-vite-tailwind-template'>
+	<BrowserRouter basename='/spanish-conjugation'>
 		<App />
 	</BrowserRouter>
 );
