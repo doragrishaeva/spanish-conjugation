@@ -3,8 +3,6 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { App } from './App';
 
-import './index.scss';
-
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 	<BrowserRouter basename='/spanish-conjugation'>
 		<App />

@@ -28,6 +28,11 @@ export const Card = ({ verb, fetchNewVerb }: CardProps) => {
 		}
 	};
 
+	const handleReplace = () => {
+		fetchNewVerb();
+		setInputValue('');
+	};
+
 	return (
 		<div
 			className={`card ${status === 'correct' ? 'card--correct' : ''} ${
@@ -44,12 +49,17 @@ export const Card = ({ verb, fetchNewVerb }: CardProps) => {
 			<div className='pronoun'>
 				Pronouns: <b>{verb?.pronoun}</b>
 			</div>
-			<input
-				placeholder='Type answer here'
-				value={inputValue}
-				onChange={(e) => setInputValue(e.target.value)}
-				onKeyPress={handleKeyPress}
-			/>
+			<div className='input'>
+				<input
+					placeholder='Type in Spanish'
+					value={inputValue}
+					onChange={(e) => setInputValue(e.target.value)}
+					onKeyPress={handleKeyPress}
+				/>
+				<div className='btn' onClick={handleReplace}>
+					Don't know
+				</div>
+			</div>
 		</div>
 	);
 };
