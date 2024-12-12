@@ -1,14 +1,34 @@
-function getRandomConjugation(conjugatedVerb) {
-	const moods = Object.keys(conjugatedVerb);
-	const randomMood = moods[Math.floor(Math.random() * moods.length)];
+function getRandomConjugation(conjugatedVerb, filters = []) {
+	const filterSet = new Set(filters);
 
-	const tenses = Object.keys(conjugatedVerb[randomMood]);
-	const randomTense = tenses[Math.floor(Math.random() * tenses.length)];
+	const filteredOptions = [];
+
+	Object.keys(conjugatedVerb).forEach((mood) => {
+		Object.keys(conjugatedVerb[mood]).forEach((tense) => {
+			const filterKey = `${mood}_${tense}`;
+			if (filters.length === 0 || filterSet.has(filterKey)) {
+				filteredOptions.push({ mood, tense });
+			}
+		});
+	});
+
+	if (filteredOptions.length === 0) {
+		console.error(
+			'Available moods and tenses:',
+			Object.keys(conjugatedVerb)
+		);
+		throw new Error(
+			'No matching moods and tenses found based on the filters'
+		);
+	}
+
+	const randomOption =
+		filteredOptions[Math.floor(Math.random() * filteredOptions.length)];
+	const { mood: randomMood, tense: randomTense } = randomOption;
 
 	const pronounGroups = ['singular', 'plural'];
 	const randomPronounGroup =
 		pronounGroups[Math.floor(Math.random() * pronounGroups.length)];
-
 	const persons = Object.keys(
 		conjugatedVerb[randomMood][randomTense][randomPronounGroup]
 	);

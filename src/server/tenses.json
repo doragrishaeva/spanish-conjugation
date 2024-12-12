@@ -1,0 +1,119 @@
+[
+	{
+		"id": "indicative_present",
+		"name": "Presente",
+		"mood": "indicative",
+		"tense": "present"
+	},
+	{
+		"id": "indicative_imperfect",
+		"name": "Pretérito Imperfecto",
+		"mood": "indicative",
+		"tense": "imperfect"
+	},
+	{
+		"id": "indicative_preterite",
+		"name": "Pretérito Indefinido",
+		"mood": "indicative",
+		"tense": "preterite"
+	},
+	{
+		"id": "indicative_future",
+		"name": "Futuro Simple",
+		"mood": "indicative",
+		"tense": "future"
+	},
+	{
+		"id": "indicative_perfect",
+		"name": "Pretérito Perfecto",
+		"mood": "indicative",
+		"tense": "perfect"
+	},
+	{
+		"id": "indicative_pluperfect",
+		"name": "Pretérito Pluscuamperfecto",
+		"mood": "indicative",
+		"tense": "pluperfect"
+	},
+	{
+		"id": "indicative_future_perfect",
+		"name": "Futuro Perfecto",
+		"mood": "indicative",
+		"tense": "future perfect"
+	},
+	{
+		"id": "indicative_preterite_perfect",
+		"name": "Pretérito Anterior",
+		"mood": "indicative",
+		"tense": "preterite perfect"
+	},
+
+	{
+		"id": "subjunctive_present",
+		"name": "Presente de Subjuntivo",
+		"mood": "subjunctive",
+		"tense": "present"
+	},
+	{
+		"id": "subjunctive_imperfect_ra",
+		"name": "Pretérito Imperfecto de Subjuntivo (-ra)",
+		"mood": "subjunctive",
+		"tense": "imperfect -ra"
+	},
+	{
+		"id": "subjunctive_imperfect_se",
+		"name": "Pretérito Imperfecto de Subjuntivo (-se)",
+		"mood": "subjunctive",
+		"tense": "imperfect -se"
+	},
+	{
+		"id": "subjunctive_future",
+		"name": "Futuro de Subjuntivo",
+		"mood": "subjunctive",
+		"tense": "future"
+	},
+	{
+		"id": "subjunctive_perfect",
+		"name": "Pretérito Perfecto de Subjuntivo",
+		"mood": "subjunctive",
+		"tense": "perfect"
+	},
+	{
+		"id": "subjunctive_pluperfect",
+		"name": "Pretérito Pluscuamperfecto de Subjuntivo",
+		"mood": "subjunctive",
+		"tense": "pluperfect"
+	},
+	{
+		"id": "subjunctive_future_perfect",
+		"name": "Futuro Perfecto de Subjuntivo",
+		"mood": "subjunctive",
+		"tense": "future perfect"
+	},
+
+	{
+		"id": "conditional_present",
+		"name": "Condicional Simple",
+		"mood": "conditional",
+		"tense": "present"
+	},
+	{
+		"id": "conditional_perfect",
+		"name": "Condicional Compuesto",
+		"mood": "conditional",
+		"tense": "perfect"
+	},
+
+	{
+		"id": "imperative_affirmative",
+		"name": "Imperativo Afirmativo",
+		"mood": "imperative",
+		"tense": "affirmative"
+	},
+	{
+		"id": "imperative_negative",
+		"name": "Imperativo Negativo",
+		"mood": "imperative",
+		"tense": "negative"
+	}
+]

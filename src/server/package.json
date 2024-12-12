@@ -16,6 +16,7 @@
 	"dependencies": {
 		"conjugator": "^1.0.1",
 		"cors": "^2.8.5",
-		"express": "^4.21.2"
+		"express": "^4.21.2",
+		"uuid": "^11.0.3"
 	}
 }

@@ -1,14 +1,17 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { observer } from 'mobx-react-lite';
 
-import { CardStatus, IVerb } from '@/models';
+import { appStore } from '@/stores';
+import { CardStatus } from '@/models';
 import './Card.scss';
 
-interface CardProps {
-	verb: IVerb;
-	fetchNewVerb: () => void;
-}
+export const Card = observer(() => {
+	const { verb, fetchVerb } = appStore;
 
-export const Card = ({ verb, fetchNewVerb }: CardProps) => {
+	useEffect(() => {
+		fetchVerb();
+	}, []);
+
 	const [inputValue, setInputValue] = useState('');
 	const [status, setStatus] = useState<CardStatus>(CardStatus.Unset);
 
@@ -17,7 +20,7 @@ export const Card = ({ verb, fetchNewVerb }: CardProps) => {
 			if (inputValue.trim().toLowerCase() === verb.answer.toLowerCase()) {
 				setStatus(CardStatus.Correct);
 				setTimeout(() => {
-					fetchNewVerb();
+					fetchVerb();
 					setStatus(CardStatus.Unset);
 				}, 400);
 			} else {
@@ -29,7 +32,7 @@ export const Card = ({ verb, fetchNewVerb }: CardProps) => {
 	};
 
 	const handleReplace = () => {
-		fetchNewVerb();
+		fetchVerb();
 		setInputValue('');
 	};
 
@@ -62,4 +65,4 @@ export const Card = ({ verb, fetchNewVerb }: CardProps) => {
 			</div>
 		</div>
 	);
-};
+});
